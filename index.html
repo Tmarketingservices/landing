@@ -199,18 +199,18 @@
     }
 
     .hero-big-t {
-      position: absolute;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 52vw;
-      font-weight: 600;
-      color: rgba(255,255,255,0.025);
-      line-height: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      letter-spacing: -0.05em;
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.05; /* controls transparency */
+}
+    .hero-big-t img {
+  width: 60vw;       /* controls size */
+  max-width: 700px;  /* prevents it from being too huge */
+  height: auto;
+}
 
     .hero-tag {
       position: absolute;
