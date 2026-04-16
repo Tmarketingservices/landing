@@ -1046,5 +1046,31 @@ target="_blank" class="btn-rose">Get a Free Consultation</a>
       nav.style.boxShadow = window.scrollY > 50 ? '0 2px 30px rgba(42,41,39,0.08)' : 'none';
     });
   </script>
+
+  <script>
+  // 1. Disable Right-Click Menu
+  document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // 2. Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+  function ctrlShiftKey(e, keyCode) {
+    return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+  }
+
+  document.onkeydown = (e) => {
+    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+    if (
+      event.keyCode === 123 ||
+      ctrlShiftKey(e, 'I') ||
+      ctrlShiftKey(e, 'J') ||
+      ctrlShiftKey(e, 'C') ||
+      (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+    ) {
+      return false;
+    }
+  };
+
+  // 3. Prevent ContentEditable modification
+  document.body.contentEditable = false;
+</script>
 </body>
 </html>
